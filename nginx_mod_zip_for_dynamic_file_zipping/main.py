@@ -5,13 +5,13 @@ from fastapi.responses import PlainTextResponse
 app = FastAPI()
 
 
-@app.get("/zip/")
+@app.get('/zip/')
 def zipfiles():
     return PlainTextResponse(
         content=build_content(),
         headers={
             'X-Archive-Files': 'zip',
-#            'Content-Disposition: 'attachment; filename=mod_zip_demo.zip',
+            'Content-Disposition': 'attachment; filename=mod_zip_demo.zip',
         },
     )
 
